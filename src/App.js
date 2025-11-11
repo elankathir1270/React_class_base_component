@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Demo from "./components/Demo";
+
+/**
+ why class base component??
+ prior to React 16.8, it was not possible to use functional components to manage
+ states or side effects.
+ 
+ in React 16.8, React hook were introduced for functional components like useState,useEffect, ect. 
+
+ React hooks cannot be used in class based component.
+ 
+ */
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Demo name={"Hello World!"}>
+        Setting children props from App component
+      </Demo>
     </div>
   );
 }
