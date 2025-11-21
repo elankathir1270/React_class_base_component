@@ -20,7 +20,7 @@ class Demo extends Component {
     //   this.setState({ count: this.state.count + 1 });
     // }
 
-    throw new Error("An error occured in componentDidUpdate");
+    throw new Error("An error occured ");
   }
 
   toggleParagraph() {
