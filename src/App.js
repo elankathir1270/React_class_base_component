@@ -1,5 +1,7 @@
 import "./App.css";
 import Demo from "./components/Demo";
+import ErrorBoundry from "./components/ErrorBoundries";
+import DemoContext from "./DemoContext";
 
 /**
  why class base component??
@@ -14,11 +16,16 @@ import Demo from "./components/Demo";
 
 function App() {
   return (
-    <div className="App">
-      <Demo name={"Hello World!"}>
-        Setting children props from App component
-      </Demo>
-    </div>
+    //using Context Provider to provide context value to all child components
+    <DemoContext.Provider value={{ value: "This is demo context value" }}>
+      <div className="App">
+        <ErrorBoundry>
+          <Demo name={"Hello World!"}>
+            Setting children props from App component
+          </Demo>
+        </ErrorBoundry>
+      </div>
+    </DemoContext.Provider>
   );
 }
 
